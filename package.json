@@ -1,0 +1,33 @@
+{
+  "name": "training-diary",
+  "version": "1.0.0",
+  "description": "An application for keeping a diary of trainings, planning exercises, analyzing nutrition and progress.",
+  "main": "index.html",
+  "dependencies": {
+    "milligram": "^1.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bruzhmelev/TrainingDiary.git"
+  },
+  "keywords": [
+    "training",
+    "diary",
+    "progress",
+    "nutrition",
+    "plan",
+    "exercises",
+    "sport",
+    "body-building"
+  ],
+  "author": "bruzhmelev@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bruzhmelev/TrainingDiary/issues"
+  },
+  "homepage": "https://github.com/bruzhmelev/TrainingDiary#readme"
+}
