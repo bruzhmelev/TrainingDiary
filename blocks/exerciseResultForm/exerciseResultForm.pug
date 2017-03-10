@@ -1,0 +1,8 @@
+form
+    label Упражнение
+        select.training-progress-form__exercise
+    label Результат выполнения {{exercise.name}}
+        input(type="text").training-progress-form__result
+    label C "Штанга, кг" {{exercise.variableParameterName}}
+        input(type="text").training-progress-form__variable-parameter-value
+    button.training-progress-form__add-button Добавить

@@ -1,0 +1,25 @@
+function pug_rethrow(n,e,r,t){if(!(n instanceof Error))throw n;if(!("undefined"==typeof window&&e||t))throw n.message+=" on line "+r,n;try{t=t||require("fs").readFileSync(e,"utf8")}catch(e){pug_rethrow(n,null,r)}var i=3,a=t.split("\n"),o=Math.max(r-i,0),h=Math.min(a.length,r+i),i=a.slice(o,h).map(function(n,e){var t=e+o+1;return(t==r?"  > ":"    ")+t+"| "+n}).join("\n");throw n.path=e,n.message=(e||"Pug")+":"+r+"\n"+i+"\n\n"+n.message,n}function exerciseResultForm_tmpl(locals) {var pug_html = "", pug_mixins = {}, pug_interp;var pug_debug_filename, pug_debug_line;try {var pug_debug_sources = {"blocks\u002FexerciseResultForm\u002FexerciseResultForm.pug":"form\r\n    label Упражнение\r\n        select.training-progress-form__exercise\r\n    label Результат выполнения {{exercise.name}}\r\n        input(type=\"text\").training-progress-form__result\r\n    label C \"Штанга, кг\" {{exercise.variableParameterName}}\r\n        input(type=\"text\").training-progress-form__variable-parameter-value\r\n    button.training-progress-form__add-button Добавить"};
+;pug_debug_line = 1;pug_debug_filename = "blocks\u002FexerciseResultForm\u002FexerciseResultForm.pug";
+pug_html = pug_html + "\u003Cform\u003E";
+;pug_debug_line = 2;pug_debug_filename = "blocks\u002FexerciseResultForm\u002FexerciseResultForm.pug";
+pug_html = pug_html + "\u003Clabel\u003E";
+;pug_debug_line = 2;pug_debug_filename = "blocks\u002FexerciseResultForm\u002FexerciseResultForm.pug";
+pug_html = pug_html + "Упражнение";
+;pug_debug_line = 3;pug_debug_filename = "blocks\u002FexerciseResultForm\u002FexerciseResultForm.pug";
+pug_html = pug_html + "\u003Cselect class=\"training-progress-form__exercise\"\u003E\u003C\u002Fselect\u003E\u003C\u002Flabel\u003E";
+;pug_debug_line = 4;pug_debug_filename = "blocks\u002FexerciseResultForm\u002FexerciseResultForm.pug";
+pug_html = pug_html + "\u003Clabel\u003E";
+;pug_debug_line = 4;pug_debug_filename = "blocks\u002FexerciseResultForm\u002FexerciseResultForm.pug";
+pug_html = pug_html + "Результат выполнения {{exercise.name}}";
+;pug_debug_line = 5;pug_debug_filename = "blocks\u002FexerciseResultForm\u002FexerciseResultForm.pug";
+pug_html = pug_html + "\u003Cinput class=\"training-progress-form__result\" type=\"text\"\u002F\u003E\u003C\u002Flabel\u003E";
+;pug_debug_line = 6;pug_debug_filename = "blocks\u002FexerciseResultForm\u002FexerciseResultForm.pug";
+pug_html = pug_html + "\u003Clabel\u003E";
+;pug_debug_line = 6;pug_debug_filename = "blocks\u002FexerciseResultForm\u002FexerciseResultForm.pug";
+pug_html = pug_html + "C \"Штанга, кг\" {{exercise.variableParameterName}}";
+;pug_debug_line = 7;pug_debug_filename = "blocks\u002FexerciseResultForm\u002FexerciseResultForm.pug";
+pug_html = pug_html + "\u003Cinput class=\"training-progress-form__variable-parameter-value\" type=\"text\"\u002F\u003E\u003C\u002Flabel\u003E";
+;pug_debug_line = 8;pug_debug_filename = "blocks\u002FexerciseResultForm\u002FexerciseResultForm.pug";
+pug_html = pug_html + "\u003Cbutton class=\"training-progress-form__add-button\"\u003E";
+;pug_debug_line = 8;pug_debug_filename = "blocks\u002FexerciseResultForm\u002FexerciseResultForm.pug";
+pug_html = pug_html + "Добавить\u003C\u002Fbutton\u003E\u003C\u002Fform\u003E";} catch (err) {pug_rethrow(err, pug_debug_filename, pug_debug_line, pug_debug_sources[pug_debug_filename]);};return pug_html;}

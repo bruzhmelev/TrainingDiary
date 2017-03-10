@@ -18,6 +18,7 @@
 		render () {
 			this.exerciseInfo.render();
 			this.exerciseAddForm.render();
+			this.exerciseResultForm.render();
 		}
 
 		_createComponents () {
@@ -28,13 +29,17 @@
 			this.exerciseInfo = new ExerciseInfo({
 				el: document.querySelector('.exercise-info')
 			});
+
+            this.exerciseResultForm = new ExerciseResultForm({
+				el: document.querySelector('.exercise-result-form')
+			});
 		}
 
 		_initMediate () {
+            
 			this.exerciseAddForm.on('add-exercise', (event) => {
 
 				let data = event.detail;
-
 
 				this.exerciseInfo.addExercise(data.exercise);
 				this.exerciseInfo.render();
