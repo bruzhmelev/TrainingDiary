@@ -16,16 +16,36 @@
 
     class ExerciseInfo {
         constructor({el, data = {exercises: []}}){
-            this.el = options.el;
+            this.el = el;
+            this.data = data;
 
-            this.name = this.el.querySelector('.exercise-info__name');
-            this.description = this.el.querySelector('.exercise-info__description');
-            this.videoTutorialLink = this.el.querySelector('.exercise-info__video-tutorial-link');
-            this.variableParamentrName = this.el.querySelector('.exercise-info__variable-parameter-name');
+            data.exercises.push(
+                {
+                    name: "Test name",
+                    description: "Test description",
+                    videoTutorialLink: "Test videoTutorialLink",
+                    variableParamentrName: "Test variableParamentrName",
+                }
+            );
+
+            // this.name = this.el.querySelector('.exercise-info__name');
+            // this.description = this.el.querySelector('.exercise-info__description');
+            // this.videoTutorialLink = this.el.querySelector('.exercise-info__video-tutorial-link');
+            // this.variableParamentrName = this.el.querySelector('.exercise-info__variable-parameter-name');
 
             this.el.onclick = (event) => {
                 alert('exercise-info.onclick -> Выводить информацию по прогрессу в упражнении и историю записей.');
             };
+
+            this.render();
+        }
+
+        render () {
+			this.el.innerHTML = tmpl(this.data);
+		}
+
+        addExercise (newExercise) {
+            this.data.exercises.push(newExercise);
         }
 
         //Кастомные события/триггеры
@@ -37,5 +57,5 @@
 
 
     //export 
-    window.ExerciseAddForm = ExerciseAddForm;
+    window.ExerciseInfo = ExerciseInfo;
 })();

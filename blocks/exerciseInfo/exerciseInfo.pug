@@ -1,0 +1,13 @@
+table
+    tr
+        th Название упражнения
+        th Описание
+        th Ссылка на видео инструкцию
+        th Изменяемый параметр тренировки
+    each exercise in exercises
+        tr.exercise-info__item-container
+            td.exercise-info__name=exercise.name
+            td.exercise-info__description=exercise.description
+            td.exercise-info__video-tutorial-link=exercise.videoTutorialLink
+            td.exercise-info__variable-parameter-name=exercise.variableParamentrName
+

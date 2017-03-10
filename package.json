@@ -6,9 +6,13 @@
   "dependencies": {
     "milligram": "^1.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "pug": "^2.0.0-beta11"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run pug_tmpl && live-server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pug_tmpl": "pug --client blocks/exerciseInfo/exerciseInfo.pug --extension pug.js --name exerciseInfo_tmpl && pug --client blocks/exerciseAddForm/exerciseAddForm.pug --extension pug.js --name exerciseAddForm_tmpl"
   },
   "repository": {
     "type": "git",

@@ -9,58 +9,31 @@
     <body>
         <div class="app">
             <div class="exercise-info">
-                <div class="exercise-info__name"></div>
-                <div class="exercise-info__description"></div>
-                <div class="exercise-info__video-tutorial-link"></div>
-                <div class="exercise-info__variable-parameter-name"></div>
             </div>
-            <form class="exercise-add-form">
-                <label>
-                    Название упражнения или развиваемого параметра. Пример "Жим лежа, максимум за подход", "Бег, км за пробежку"
-                    <input type="text" class="exercise-add-form__name"></input>
-                </label>
-                <label>
-                    Описание
-                    <textarea class="exercise-add-form__description" rows="6" cols="50"></textarea>
-                </label>
-                <label>
-                    Ссылка на видео-пример по упражнению(если есть)
-                    <input type="text" class="exercise-add-form__video-tutorial-link"></input>
-                </label>
-                <label>
-                    Название переменного параметра в тренировке (вес, высота запрыгивания). Пример "Штанга, кг", "Утяжелители для бега, кг"
-                    <input type="text" class="exercise-add-form__variable-parameter-name"></input>
-                </label>
-                <button class="exercise-add-form__add-button">Добавить</button>
-            </form>
+            <div class="exercise-add-form">
+
+            </div>
         </div>
 
+        <script src="blocks/exerciseAddForm/exerciseAddForm.pug.js"></script>
         <script src="blocks/exerciseAddForm/exerciseAddForm.js"></script>
+        <script src="blocks/exerciseInfo/exerciseInfo.pug.js"></script>
         <script src="blocks/exerciseInfo/exerciseInfo.js"></script>
 
-        <script type="text/javascript">
+        <script src="blocks/app/app.js"></script>
+
+        <!-- Application start -->
+        <script>
             (function () {
                 'use strict';
                 // import
-                let ExerciseAddForm = window.ExerciseAddForm;
-                let ExerciseInfo = window.ExerciseInfo;
+                let App = window.App;
 
-
-
-                let exerciseAddFormElArray = [...document.querySelectorAll('.exercise-add-form')];
-                exerciseAddFormElArray.forEach(el => {
-                    new ExerciseAddForm({
-                        el: el
-                    });
-                })
-
-                let exerciseInfoElArray = [...document.querySelectorAll('.exercise-info')];
-                exerciseInfoElArray.forEach(el => {
-                    new ExerciseInfo({
-                        el: el
-                    });
-                })
+                new App({
+                    el: document.querySelector('.app')
+                });
             })();
+
         </script>
     </body>
 </html>
