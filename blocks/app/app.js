@@ -5,6 +5,32 @@
 	const ExerciseAddForm = window.ExerciseAddForm;
 	const ExerciseInfo = window.ExerciseInfo;
 
+	//data
+	let appData = {
+		exercises: [
+			{
+				name: "Жим лежа, повторения",
+				description: "Жим лежа описание...",
+				videoTutorialLink: "https://www.youtube.com/...",
+				variableParametrName: "Штанга, кг",
+			},
+			{
+				name: "Присед, повторения",
+				description: "Присед описание...",
+				videoTutorialLink: "https://www.youtube.com/...",
+				variableParametrName: "Штанга, кг",
+			},
+			{
+				name: "Становая тяга, повторения",
+				description: "Становая тяга описание...",
+				videoTutorialLink: "https://www.youtube.com/...",
+				variableParametrName: "Штанга, кг",
+			}
+		
+		],
+		trainSets: JSON.parse('[{"time":"2017-03-15T21:59:27.944Z","result":40,"variableParametrValue":null,"exercise":{"name":"Отжимания","variableParametrName":"Утяжеление"}},{"time":"2017-03-15T21:59:46.269Z","result":"123123","variableParametrValue":"123123","exercise":""},{"time":"2017-03-15T22:00:54.957Z","result":"123","variableParametrValue":"123","exercise":""}]')
+	};
+
 	class App {
 		constructor(options) {
 			this.el = options.el;
@@ -38,6 +64,11 @@
 			this.trainingProgress = new TrainingProgress({
 				el: document.querySelector('.training-progress')
 			});
+
+			//dataBinding
+			this.exerciseInfo.data.exercises = appData.exercises;
+			this.exerciseResultForm.data.exercises = appData.exercises;//для выпадающего списка
+			this.trainingProgress.data.trainSets = appData.trainSets;
 		}
 
 		_initMediate () {
@@ -48,6 +79,7 @@
 
 				this.exerciseInfo.addExercise(data.exercise);
 				this.exerciseInfo.render();
+				this.exerciseResultForm.render();//Для обновления списка упражнений
 				this.exerciseAddForm.reset();
 			});
 
@@ -58,6 +90,8 @@
 				this.trainingProgress.addTrainSet(data.trainSet);
 				this.trainingProgress.render();
 				this.exerciseResultForm.reset();
+				//Проверка, что данные появляются в глобальных данных.
+				//alert(JSON.stringify(appData, null, 3));
 			});
 
 			this.exerciseInfo.on('click', (event) => {

@@ -19,20 +19,6 @@
             this.el = el;
             this.data = data;
 
-            data.exercises.push(
-                {
-                    name: "Test name",
-                    description: "Test description",
-                    videoTutorialLink: "Test videoTutorialLink",
-                    variableParamentrName: "Test variableParamentrName",
-                }
-            );
-
-            // this.name = this.el.querySelector('.exercise-info__name');
-            // this.description = this.el.querySelector('.exercise-info__description');
-            // this.videoTutorialLink = this.el.querySelector('.exercise-info__video-tutorial-link');
-            // this.variableParamentrName = this.el.querySelector('.exercise-info__variable-parameter-name');
-
 
             this.render();
         }

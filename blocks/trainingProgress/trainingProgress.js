@@ -9,18 +9,6 @@
             this.el = el;
             this.data = data;
 			
-			//test
-			let testSet = {
-				time: new Date(), 
-				result: 40,
-				variableParametrValue: null,
-				exercise: {
-					name: "Отжимания",
-					variableParametrName: "Утяжеление",
-				}
-			}
-
-			this.data.trainSets.push(testSet);
 
             this._initEvents();
         }
@@ -65,7 +53,6 @@
 		addTrainSet (newTrainSet) {
             this.data.trainSets.push(newTrainSet);
         }
-
     }
 
 

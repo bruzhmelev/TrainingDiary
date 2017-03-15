@@ -5,20 +5,28 @@
 	const tmpl = window.exerciseResultForm_tmpl;
 
     class ExerciseResultForm {
-        constructor({el, data}){
+        constructor({el, data = {exercises: []}}){
             this.el = el;
             this.data = data;
-
+			
+			//.options.selectedIndex
 
             this._initEvents();
         }
+
+		_getSelectedExercise() {
+						
+			let selectOfExercises = this.el.getElementsByClassName('training-progress-form__exercise')[0] || {};
+			let i = selectOfExercises.options.selectedIndex;
+			return selectOfExercises.options[i].value;
+		}
 
         //Кастомные события/триггеры
         //add-progress - event.newProgress
         //
 
 		render () {
-			this.el.innerHTML = tmpl();
+			this.el.innerHTML = tmpl(this.data);
 
 			this.formEl = this.el.querySelector('form');
 		}
@@ -68,7 +76,7 @@
             formData.trainSet.time = new Date();
             formData.trainSet.result = this.el.querySelector('.training-progress-form__result').value;
             formData.trainSet.variableParametrValue = this.el.querySelector('.training-progress-form__variable-parameter-value').value;
-            formData.trainSet.exercise = this.el.querySelector('.training-progress-form__exercise').value;
+            formData.trainSet.exercise = JSON.parse(this._getSelectedExercise());
 
 			return formData;
 		}

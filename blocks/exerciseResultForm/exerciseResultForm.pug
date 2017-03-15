@@ -1,8 +1,11 @@
 form
     label Упражнение
-        select.training-progress-form__exercise
-    label Результат выполнения {{exercise.name}}
-        input(type="text").training-progress-form__result
-    label C "Штанга, кг" {{exercise.variableParameterName}}
+        select(required).training-progress-form__exercise
+            option(disabled selected) Выберите упражнение
+            each exercise in exercises
+                option(value=exercise)= exercise.name
+    label Результат выполнения
+        input(type="text" required).training-progress-form__result
+    label C переменным параметром
         input(type="text").training-progress-form__variable-parameter-value
     button.training-progress-form__add-button Добавить
