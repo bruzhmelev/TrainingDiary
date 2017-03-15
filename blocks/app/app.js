@@ -19,6 +19,7 @@
 			this.exerciseInfo.render();
 			this.exerciseAddForm.render();
 			this.exerciseResultForm.render();
+			this.trainingProgress.render();
 		}
 
 		_createComponents () {
@@ -32,6 +33,10 @@
 
             this.exerciseResultForm = new ExerciseResultForm({
 				el: document.querySelector('.exercise-result-form')
+			});
+
+			this.trainingProgress = new TrainingProgress({
+				el: document.querySelector('.training-progress')
 			});
 		}
 

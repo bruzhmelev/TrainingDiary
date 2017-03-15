@@ -1,0 +1,16 @@
+table
+    tr
+        th Время выполнения
+        th Упражнение
+        th Результат выполнения
+        th Переменный параметр
+        each trainSet in trainSets
+            tr.training-progress__item-container
+                td.training-progress__train-set-time=trainSet.time.toLocaleString("ru", options)
+                td.training-progress__train-set-name=trainSet.exercise.name
+                td.training-progress__train-set-result=trainSet.result
+                td.training-progress__train-set-variable-parameter-value=trainSet.exercise.variableParametrName + ": " 
+                    if trainSet.variableParametrValueResult
+                        span=trainSet.variableParametrValueResult
+                    else
+                        span нет
