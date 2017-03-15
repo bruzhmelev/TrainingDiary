@@ -59,6 +59,16 @@
 				this.trainingProgress.render();
 				this.exerciseResultForm.reset();
 			});
+
+			this.exerciseInfo.on('click', (event) => {
+
+				let data = event.detail;
+
+				alert('Показать подробную информацию по данному упражнению в блоке - exercise-detailed-info, - exerciseDetailedInfo.showDetails(currentTarget.exercise)');
+				// this.trainingProgress.addTrainSet(data.trainSet);
+				// this.trainingProgress.render();
+				// this.exerciseResultForm.reset();
+			});
 		}
 	
 		// methods

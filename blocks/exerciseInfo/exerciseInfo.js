@@ -33,9 +33,6 @@
             // this.videoTutorialLink = this.el.querySelector('.exercise-info__video-tutorial-link');
             // this.variableParamentrName = this.el.querySelector('.exercise-info__variable-parameter-name');
 
-            this.el.onclick = (event) => {
-                alert('exercise-info.onclick -> Выводить информацию по прогрессу в упражнении и историю записей.');
-            };
 
             this.render();
         }
@@ -53,6 +50,26 @@
         //Простой вариант вывод alert - Упражнение:"Жим лежа, максимум за подход"  Первый замер - 10-09-2016: 10 подходов 50кг. Последний замер - 07-03-2017: 7 подходов 80кг.
         //Улучшение - Раскрытие таблицы со всеми вводимыми параметрами.
         //Улучшение - Построение графика изменения во времени.
+
+
+        //Код для выноса
+        /** Регистрация обработчика события
+		 * @param  {string}   name - тип события
+		 * @param  {function} cb
+		 */
+		on (name, cb) {
+			this.el.addEventListener(name, cb);
+		}
+
+		/** Вызов обработчиков событий
+		 * @param  {string} name - тип события
+		 * @param  {*} data
+		 */
+		trigger (name, data) {
+			let event = new CustomEvent(name, {detail: data});
+
+			this.el.dispatchEvent(event);
+		}
     }
 
 
