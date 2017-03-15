@@ -53,7 +53,7 @@
 			event.preventDefault();
 			let formData = this._getFormData();
 
-			this.trigger('add-exercise', formData);
+			this.trigger('add-train-set', formData);
 		}
 
 		_getInputs () {
@@ -62,13 +62,13 @@
 
 		_getFormData () {
 			let formData = {
-				exercise:{}
+				trainSet:{}
 			};
 
-            formData.exercise.name = this.el.querySelector('.exercise-add-form__name').value;
-            formData.exercise.description = this.el.querySelector('.exercise-add-form__description').value;
-            formData.exercise.videoTutorialLink = this.el.querySelector('.exercise-add-form__video-tutorial-link').value;
-            formData.exercise.variableParamentrName = this.el.querySelector('.exercise-add-form__variable-parameter-name').value;
+            formData.trainSet.time = new Date();
+            formData.trainSet.result = this.el.querySelector('.training-progress-form__result').value;
+            formData.trainSet.variableParametrValue = this.el.querySelector('.training-progress-form__variable-parameter-value').value;
+            formData.trainSet.exercise = this.el.querySelector('.training-progress-form__exercise').value;
 
 			return formData;
 		}

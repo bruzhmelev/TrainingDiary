@@ -12,9 +12,8 @@
 			//test
 			let testSet = {
 				time: new Date(), 
-				name: "Отжимания", 
 				result: 40,
-				variableParametrValueResult: null,
+				variableParametrValue: null,
 				exercise: {
 					name: "Отжимания",
 					variableParametrName: "Утяжеление",
@@ -62,6 +61,10 @@
 
 		// 	this.trigger('add-exercise', formData);
 		// }
+
+		addTrainSet (newTrainSet) {
+            this.data.trainSets.push(newTrainSet);
+        }
 
     }
 

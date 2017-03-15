@@ -50,6 +50,15 @@
 				this.exerciseInfo.render();
 				this.exerciseAddForm.reset();
 			});
+
+			this.exerciseResultForm.on('add-train-set', (event) => {
+
+				let data = event.detail;
+
+				this.trainingProgress.addTrainSet(data.trainSet);
+				this.trainingProgress.render();
+				this.exerciseResultForm.reset();
+			});
 		}
 	
 		// methods
