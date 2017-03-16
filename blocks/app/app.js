@@ -4,6 +4,7 @@
 	//import
 	const ExerciseAddForm = window.ExerciseAddForm;
 	const ExerciseInfo = window.ExerciseInfo;
+	const DataService = window.DataService;
 
 	//external data
 	// let appData = {
@@ -31,26 +32,13 @@
 	// 	trainSets: JSON.parse('[{"time":"2017-03-15T21:59:27.944Z","result":40,"variableParametrValue":null,"exercise":{"name":"Отжимания","variableParametrName":"Утяжеление"}},{"time":"2017-03-15T21:59:46.269Z","result":"123123","variableParametrValue":"123123","exercise":""},{"time":"2017-03-15T22:00:54.957Z","result":"123","variableParametrValue":"123","exercise":""}]')
 	// };
 
-	function makeRequest(cb) {
-		let xhr = new XMLHttpRequest();
-		xhr.open('GET', 'data/appData.json', true);
-
-		xhr.onload = () => {
-			console.log('onload DATA:', JSON.parse(xhr.responseText));
-			cb(JSON.parse(xhr.responseText));
-		}
-
-		xhr.send();
-		console.log('after send DATA:', xhr.responseText);
-	}
-
 
 	class App {
 		constructor(options) {
 			this.el = options.el;
 
 
-			makeRequest(appDataResponse => {
+			DataService.makeRequest(appDataResponse => {
 				this.appData = appDataResponse;
 
 				this._createComponents();
