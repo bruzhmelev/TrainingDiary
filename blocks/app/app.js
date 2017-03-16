@@ -33,7 +33,7 @@
 
 	function makeRequest(cb) {
 		let xhr = new XMLHttpRequest();
-		xhr.open('GET', '/data/appData.json', true);
+		xhr.open('GET', 'data/appData.json', true);
 
 		xhr.onload = () => {
 			console.log('onload DATA:', JSON.parse(xhr.responseText));
