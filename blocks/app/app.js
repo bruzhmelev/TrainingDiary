@@ -103,6 +103,7 @@
 				this.exerciseInfo.render();
 				this.exerciseResultForm.render(); //Для обновления списка упражнений
 				this.exerciseAddForm.reset();
+				this.exerciseAddForm.toggle();
 			});
 
 			this.exerciseResultForm.on('add-train-set', (event) => {

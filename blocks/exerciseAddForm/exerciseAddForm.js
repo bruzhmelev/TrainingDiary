@@ -5,13 +5,17 @@
 	const tmpl = window.exerciseAddForm_tmpl;
 
     class ExerciseAddForm {
-        constructor(options){
-            this.el = options.el;
+        constructor({
+			el,
+			data = {
+				active: false
+			}
+		}){
+            this.el = el;
+			this.data = data;
 
-            // this.addButton.onclick = (event) => {
-            //     alert('exercise-add-form__add-button -> addButton.onclick');
-            // };
-
+			
+			this.render();
             this._initEvents();
         }
 
@@ -20,8 +24,7 @@
         //
 
 		render () {
-			this.el.innerHTML = tmpl();
-
+			this.el.innerHTML = tmpl(this.data);
 			this.formEl = this.el.querySelector('form');
 		}
 
@@ -46,9 +49,23 @@
 		reset () {
 			this.formEl.reset();
 		}
+
+		_toggle() {
+			this.data.active = !this.data.active;
+		}
 	
 		_initEvents () {
 			this.on('submit', this._onSubmit.bind(this));
+			
+			//HACK
+			let toggleButton = this.el.querySelector('.exercise-add-form__toggle');
+			//this.toggleButton.onclick = this._toggle.bind(this);
+			//this.toggleButton.addEventListener('click', this._toggle.bind(this));
+			toggleButton.onclick = function(){alert(1)};
+
+			//Вот такое в консоли работает а здесь нет - Почему???
+			let el = document.querySelector('.exercise-add-form__toggle');
+			el.onclick = function(){alert(1)};
 		}
 
 		_onSubmit (event) {
