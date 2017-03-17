@@ -1,14 +1,8 @@
 ;(function(){
     'use strict';
 
-    //import
-	const tmpl = window.exerciseAddForm_tmpl;
-
     class DataService {
-        constructor(){
-
-        }
-
+        constructor(){}
 
 		static makeRequest(cb) {
 			let xhr = new XMLHttpRequest();
