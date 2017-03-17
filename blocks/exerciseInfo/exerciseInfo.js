@@ -2,16 +2,16 @@
     'use strict';
 
     //import
-	const tmpl = window.exerciseInfo_tmpl;
+    const tmpl = window.exerciseInfo_tmpl;
 
-	/**
-	 * @typedef {Object} Exercise
-	 *
- 	 * @property {string} name - Название упражнения.
- 	 * @property {string} description - Описание упражнения.
- 	 * @property {string} videoTutorialLink - Ссылка на видео инструкцию по упражнению.
- 	 * @property {string} variableParamentrName - Название изменяемого параметра в упражнении(вес, время выполнения).
-	 */
+    /**
+     * @typedef {Object} Exercise
+     *
+      * @property {string} name - Название упражнения.
+      * @property {string} description - Описание упражнения.
+      * @property {string} videoTutorialLink - Ссылка на видео инструкцию по упражнению.
+      * @property {string} variableParamentrName - Название изменяемого параметра в упражнении(вес, время выполнения).
+     */
 
 
     class ExerciseInfo {
@@ -24,8 +24,8 @@
         }
 
         render () {
-			this.el.innerHTML = tmpl(this.data);
-		}
+            this.el.innerHTML = tmpl(this.data);
+        }
 
         addExercise (newExercise) {
             this.data.exercises.push(newExercise);
@@ -40,22 +40,22 @@
 
         //Код для выноса
         /** Регистрация обработчика события
-		 * @param  {string}   name - тип события
-		 * @param  {function} cb
-		 */
-		on (name, cb) {
-			this.el.addEventListener(name, cb);
-		}
+         * @param  {string}   name - тип события
+         * @param  {function} cb
+         */
+        on (name, cb) {
+            this.el.addEventListener(name, cb);
+        }
 
-		/** Вызов обработчиков событий
-		 * @param  {string} name - тип события
-		 * @param  {*} data
-		 */
-		trigger (name, data) {
-			let event = new CustomEvent(name, {detail: data});
+        /** Вызов обработчиков событий
+         * @param  {string} name - тип события
+         * @param  {*} data
+         */
+        trigger (name, data) {
+            let event = new CustomEvent(name, {detail: data});
 
-			this.el.dispatchEvent(event);
-		}
+            this.el.dispatchEvent(event);
+        }
     }
 
 

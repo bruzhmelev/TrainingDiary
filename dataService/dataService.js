@@ -4,18 +4,18 @@
     class DataService {
         constructor(){}
 
-		static makeRequest(cb) {
-			let xhr = new XMLHttpRequest();
-			xhr.open('GET', 'data/appData.json', true);
+        static makeRequest(cb) {
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', 'data/appData.json', true);
 
-			xhr.onload = () => {
-				console.log('onload DATA:', JSON.parse(xhr.responseText));
-				cb(JSON.parse(xhr.responseText));
-			}
+            xhr.onload = () => {
+                console.log('onload DATA:', JSON.parse(xhr.responseText));
+                cb(JSON.parse(xhr.responseText));
+            }
 
-			xhr.send();
-			console.log('after send DATA:', xhr.responseText);
-		}
+            xhr.send();
+            console.log('after send DATA:', xhr.responseText);
+        }
     }
 
 
