@@ -1,4 +1,4 @@
-;(function(){
+(function(){
     'use strict';
 
     //import
@@ -8,7 +8,7 @@
         constructor({
             el,
             data = {
-                active: false
+                active: true
             }
         }){
             this.el = el;
@@ -50,22 +50,38 @@
             this.formEl.reset();
         }
 
-        _toggle() {
-            this.data.active = !this.data.active;
+        _toggle(event) {
+            event.preventDefault();
+            this.toggle();
         }
+
+        toggle() {
+            alert('toggle');
+            this.data.active = !this.data.active;
+            this.render();
+        }
+
+
     
         _initEvents () {
-            this.on('submit', this._onSubmit.bind(this));
             
-            //HACK
-            let toggleButton = this.el.querySelector('.exercise-add-form__toggle');
-            //this.toggleButton.onclick = this._toggle.bind(this);
-            //this.toggleButton.addEventListener('click', this._toggle.bind(this));
-            toggleButton.onclick = function(){alert(1)};
+            this.toggleButton = this.el.querySelector('.exercise-add-form__toggle');
 
+            this.on('submit', this._onSubmit.bind(this));
+            //Проблема повесить событие на кнопку toggle, чтобы скрывать и открывать форму добавления.
+            //Не понимаю почему такой код не работает?
+            this.toggleButton.addEventListener('click', function(){
+                alert('toggleButton');
+                this.toggle();
+            });
+
+
+            //this._toggle.bind(this));// onclick = function(){alert(1);};
+
+            //this.on('click', this._onSubmit.bind(this));
             //Вот такое в консоли работает а здесь нет - Почему???
-            let el = document.querySelector('.exercise-add-form__toggle');
-            el.onclick = function(){alert(1)};
+            //let el = document.querySelector('.exercise-add-form__toggle');
+            //el.onclick = function(){alert(1);};
         }
 
         _onSubmit (event) {

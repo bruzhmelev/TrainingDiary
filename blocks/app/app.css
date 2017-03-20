@@ -6,8 +6,12 @@
 
 a{
   font-weight:bold;
-  color:#fff;
+  color:#606c76;
   text-decoration:none;
+}
+
+a:hover{
+  color:#3b4248;
 }
 
 .app {

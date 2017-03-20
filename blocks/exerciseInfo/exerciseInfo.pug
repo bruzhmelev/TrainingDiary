@@ -8,5 +8,6 @@ table
         tr.exercise-info__item-container
             td.exercise-info__name=exercise.name
             td.exercise-info__description=exercise.description
-            td.exercise-info__video-tutorial-link=exercise.videoTutorialLink
+            td.exercise-info__video-tutorial-link
+                a(href=exercise.videoTutorialLink)=exercise.videoTutorialLink
             td.exercise-info__variable-parameter-name=exercise.variableParametrName

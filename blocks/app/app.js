@@ -4,6 +4,8 @@
     //import
     const ExerciseAddForm = window.ExerciseAddForm;
     const ExerciseInfo = window.ExerciseInfo;
+    const ExerciseResultForm = window.ExerciseResultForm;
+    const TrainingProgress = window.TrainingProgress;
     const DataService = window.DataService;
 
     //external data
@@ -43,7 +45,7 @@
 
                 this._createComponents();
                 this._initMediate();
-                this._bindData()
+                this._bindData();
                 this.render();
             });
         }
