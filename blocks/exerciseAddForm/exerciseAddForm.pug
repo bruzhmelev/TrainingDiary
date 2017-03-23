@@ -1,3 +1,6 @@
+div.panel-head
+    h3 Добавление нового упражненения
+    button(hidden=!active).exercise-add-form__toggle.button-clear.close-form-button X
 form(hidden=!active)
         label Название упражнения или развиваемого параметра. Пример "Жим лежа, максимум за подход", "Бег, км за пробежку"
             input(type="text" required).exercise-add-form__name
@@ -8,4 +11,4 @@ form(hidden=!active)
         label Название переменного параметра в тренировке (вес, ...). Пример "Штанга, кг", "Утяжелители для бега, кг"
             input(type="text").exercise-add-form__variable-parameter-name
         button.exercise-add-form__add-button Добавить
-input(type="submit" hidden=!active value="Добавить новое упражнение").exercise-add-form__toggle
+button(hidden=active).exercise-add-form__toggle Добавить новое упражнение

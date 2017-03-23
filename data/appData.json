@@ -4,42 +4,48 @@
          "name": "Жим лежа, повторения",
          "description": "Жим лежа описание...",
          "videoTutorialLink": "https://www.youtube.com/...",
-         "variableParametrName": "Штанга, кг"
+         "variableParameterName": "Штанга, кг"
       },
       {
          "name": "Присед, повторения",
          "description": "Присед описание...",
          "videoTutorialLink": "https://www.youtube.com/...",
-         "variableParametrName": "Штанга, кг"
+         "variableParameterName": "Штанга, кг"
       },
       {
          "name": "Становая тяга, повторения",
          "description": "Становая тяга описание...",
          "videoTutorialLink": "https://www.youtube.com/...",
-         "variableParametrName": "Штанга, кг"
+         "variableParameterName": "Штанга, кг"
       }
    ],
    "trainSets": [
       {
          "time": "2017-03-15T21:59:27.944Z",
          "result": 40,
-         "variableParametrValue": null,
+         "variableParameterValue": null,
          "exercise": {
             "name": "Отжимания",
-            "variableParametrName": "Утяжеление"
+            "variableParameterName": "Утяжеление"
          }
       },
       {
          "time": "2017-03-15T21:59:46.269Z",
          "result": "123123",
-         "variableParametrValue": "123123",
-         "exercise": ""
+         "variableParameterValue": "123123",
+         "exercise": {
+            "name": "Отжимания",
+            "variableParameterName": "Утяжеление"
+         }
       },
       {
          "time": "2017-03-15T22:00:54.957Z",
          "result": "123",
-         "variableParametrValue": "123",
-         "exercise": ""
+         "variableParameterValue": "123",
+         "exercise": {
+            "name": "Отжимания",
+            "variableParameterName": "Утяжеление"
+         }
       }
    ]
 }

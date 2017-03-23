@@ -1,3 +1,5 @@
+div.panel-head
+    h3 Результаты текущей тренировки
 table
     tr
         th Время выполнения
@@ -9,8 +11,8 @@ table
                 td.training-progress__train-set-time=trainSet.time.toLocaleString("ru", options)
                 td.training-progress__train-set-name=trainSet.exercise.name
                 td.training-progress__train-set-result=trainSet.result
-                td.training-progress__train-set-variable-parameter-value=trainSet.exercise.variableParametrName + ": " 
-                    if trainSet.variableParametrValue
-                        span=trainSet.variableParametrValue
+                td.training-progress__train-set-variable-parameter-value=trainSet.exercise.variableParameterName + ": " 
+                    if trainSet.variableParameterValue
+                        span=trainSet.variableParameterValue
                     else
                         span нет

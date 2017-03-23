@@ -3,3 +3,10 @@
     border-radius: 5px;
     padding: 20px;
 }
+
+.close-form-button {
+    position: relative;
+    top: -60px;
+    right: -710px;
+    height: 0px;
+}
