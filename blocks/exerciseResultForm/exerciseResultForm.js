@@ -82,7 +82,7 @@
 
             formData.trainSet.time = new Date();
             formData.trainSet.result = this.el.querySelector('.training-progress-form__result').value;
-            formData.trainSet.variableParametrValue = this.el.querySelector('.training-progress-form__variable-parameter-value').value;
+            formData.trainSet.variableParameterValue = this.el.querySelector('.training-progress-form__variable-parameter-value').value;
             formData.trainSet.exercise = JSON.parse(this._getSelectedExercise());
 
             return formData;
